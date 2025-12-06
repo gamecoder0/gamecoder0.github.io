@@ -6,9 +6,9 @@
     <title>Lista de Vídeos</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>List Links</h1>
 
-    <!-- Dados embutidos em JSON (fácil de extrair) -->
+    <!-- JSON principal com os links -->
     <script id="video-data" type="application/json">
     {
       "normal_links": [
@@ -25,6 +25,13 @@
         "https://www.tiktok.com/@redbull/video/7579644811846651158?is_from_webapp=1&sender_device=pc",
         "https://www.tiktok.com/@redbull/video/7578855226640305430?is_from_webapp=1&sender_device=pc"
       ]
+    }
+    </script>
+
+    <!-- JSON isolado só com a configuração -->
+    <script id="config-data" type="application/json">
+    {
+      "videos_per_publicity": 3
     }
     </script>
 
