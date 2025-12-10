@@ -1,39 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Vídeos</title>
+    <title>GameCoder Football</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>List Links</h1>
 
-    <!-- JSON principal com os links -->
-    <script id="video-data" type="application/json">
-    {
-      "normal_links": [
-        "https://www.youtube.com/shorts/ADXqsvddtew?feature=share",
-        "https://www.youtube.com/shorts/jGMiOkQRr9E?feature=share",
-        "https://www.youtube.com/shorts/MZiK4zLtlVw?feature=share",
-        "https://www.youtube.com/shorts/MNgn0VEWfyE?feature=share",
-        "https://www.youtube.com/shorts/X9-WmH8gBpw?feature=share",
-        "https://www.youtube.com/shorts/Pogl4vRmBxc?feature=share",
-        "https://www.youtube.com/shorts/TgY0nSHprPc?feature=share"
-      ],
-      "publicity_links": [
-        "https://www.tiktok.com/@redbull/video/7579633407949278486?is_from_webapp=1&sender_device=pc",
-        "https://www.tiktok.com/@redbull/video/7579644811846651158?is_from_webapp=1&sender_device=pc",
-        "https://www.tiktok.com/@redbull/video/7578855226640305430?is_from_webapp=1&sender_device=pc"
-      ]
-    }
-    </script>
+    <div class="field-bg">
+        <div class="center-circle"></div>
+    </div>
 
-    <!-- JSON isolado só com a configuração -->
-    <script id="config-data" type="application/json">
-    {
-      "videos_per_publicity": 3
-    }
-    </script>
+    <div class="container">
+        <h1>Kick Off</h1>
+        <p class="subtitle">THE GAME STARTS HERE</p>
+
+        <!-- Link to the subdirectory we created earlier -->
+        <a href="./listlinks/" class="start-btn">
+            START GAME
+        </a>
+    </div>
 
 </body>
+
 </html>

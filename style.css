@@ -1,0 +1,134 @@
+:root {
+    --neon-green: #39ff14;
+    --dark-bg: #0a0a0a;
+    --field-green: #004d00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Background Field Effect */
+.field-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        repeating-linear-gradient(
+            0deg,
+            var(--field-green) 0px,
+            var(--field-green) 50px,
+            #005900 50px,
+            #005900 100px
+        );
+    z-index: -1;
+    perspective: 1000px;
+    transform: skewX(0deg);
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vw;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 
+        0 0 10px var(--neon-green),
+        0 0 20px var(--neon-green),
+        0 0 40px var(--neon-green);
+    animation: pulse 2s infinite;
+}
+
+p.subtitle {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+/* Button with Hover Effects */
+.start-btn {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--dark-bg);
+    background-color: var(--neon-green);
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 50px var(--neon-green);
+    background-color: white;
+    color: black;
+}
+
+.start-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.start-btn:hover::after {
+    left: 100%;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 0.8; text-shadow: 0 0 10px var(--neon-green); }
+    50% { opacity: 1; text-shadow: 0 0 30px var(--neon-green), 0 0 50px var(--neon-green); }
+    100% { opacity: 0.8; text-shadow: 0 0 10px var(--neon-green); }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 3rem; }
+    .start-btn { padding: 1rem 2rem; font-size: 1.5rem; }
+    .center-circle { width: 90vw; height: 90vw; }
+}
